@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="A live weather dashboard built using JavaScript and a weather API.">
+
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="weather-container">
+
+        <header class="page-header">
+            <h1>Weather Dashboard</h1>
+            <p>Discover the weather in your city</p>
+        </header>
+
+        <!-- City Search -->
+        <form id="search-form">
+
+            <label for="city-input">Enter City Name</label>
+
+            <div class="search-group">
+
+                <input
+                    type="text"
+                    id="city-input"
+                    placeholder="e.g. Delhi, Mumbai, Chandigarh"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" id="search-button">
+                    Search
+                </button>
+
+            </div>
+
+        </form>
+
+        <!-- Loading Message -->
+        <p id="loading-message" role="status" hidden>
+            Fetching weather data...
+        </p>
+
+        <!-- Error Message -->
+        <p id="error-message" role="alert" hidden></p>
+
+        <!-- Weather Information -->
+        <section
+            id="weather-card"
+            aria-labelledby="weather-city"
+            hidden
+        >
+
+            <h2 id="weather-city">City Name</h2>
+
+            <p id="weather-description">
+                Weather conditions will appear here.
+            </p>
+
+            <p id="temperature" class="temperature">
+                --°C
+            </p>
+
+            <div class="weather-details">
+
+                <article class="weather-detail">
+                    <h3>Humidity</h3>
+                    <p id="humidity">--%</p>
+                </article>
+
+                <article class="weather-detail">
+                    <h3>Wind Speed</h3>
+                    <p id="wind-speed">-- km/h</p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Built with HTML, CSS, JavaScript & Open-Meteo</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
